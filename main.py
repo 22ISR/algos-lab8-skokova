@@ -62,11 +62,31 @@ tina_friends = ["Tim", "Susan", "Mary", "Josh"]
 ```  
 Объедините оба списка в один, исключив дублирующиеся имена.  
 
+#paul_friends = ["Mary", "Tim", "Mike", "Henry"]  
+#tina_friends = ["Tim", "Susan", "Mary", "Josh"]
+
+#pt_friends = list(set(paul_friends) | set(tina_friends))
+#print(pt_friends)
+
+
+
+
+
 ---
 
 ### Задача 4: Общие друзья  
 Используя те же списки друзей Пола и Тины, напишите программу, которая с помощью цикла находит их общих друзей.  
 
+
+#paul_friends = ["Mary", "Tim", "Mike", "Henry"]  
+#tina_friends = ["Tim", "Susan", "Mary", "Josh"]
+
+#c = []
+
+#for i in paul_friends:
+  #  if i in tina_friends:
+ #       c.append(i)
+#print(c)        
 ---
 
 ### Задача 5: Игроки в баскетбол  
@@ -78,6 +98,17 @@ basketball_players = {"Eve", "Richard", "Jessica", "Sam", "Michael"}
 ```  
 Напишите программу, которая определяет игроков, зарегистрированных только в баскетболе (не в футболе и не в волейболе).  
 
+
+#football_players = {"Eve", "Tom", "Richard", "Peter"}  
+#volleyball_players = {"Jack", "Hugh", "Peter", "Sam"}  
+#basketball_players = {"Eve", "Richard", "Jessica", "Sam", "Michael"}
+
+#basketball_players_only = basketball_players - (football_players | volleyball_players)
+#print(basketball_players_only)
+
+
+
+
 ---
 
 ### Задача 6: Подсчёт голосов  
@@ -86,7 +117,18 @@ basketball_players = {"Eve", "Richard", "Jessica", "Sam", "Michael"}
 poll_results = ["Python", "Java", "Javascript", "Python", "Javascript", "Python", "C", "Python", "Python", "C", "Javascript"]
 ```  
 Используя словарь, подсчитайте количество голосов за каждый язык.  
+poll_results = ["Python", "Java", "Javascript", "Python", "Javascript", "Python", "C", "Python", "Python", "C", "Javascript"]
 
+votes_counted = {}
+
+for item in poll_results:
+    if item in votes_counted:
+        votes_counted[item] += 1
+    else:
+        votes_counted[item] = 1
+        
+
+print(votes_counted)
 ---
 
 ### Задача 7: Подсчёт очков  
@@ -97,6 +139,20 @@ scores = [('Mike', 10), ('Mike', 8), ('Mike', 6), ('John', 7), ('John', 8), ('Jo
 Создайте словарь, где ключами будут имена игроков, а значениями — их суммарные очки.  
 
 ---
+scores = [('Mike', 10), ('Mike', 8), ('Mike', 6), ('John', 7), ('John', 8), ('John', 5), ('Tom', 8), ('Tom', 9), ('Tom', 8)]
+
+games = {}
+
+for item in poll_results:
+    if item in votes_counted:
+        votes_counted[item] += 1
+    else:
+        votes_counted[item] = 1
+
+print(votes_counted)
+
+
+
 
 ### Задача 8: Статистика списка  
 Дан список чисел:  
