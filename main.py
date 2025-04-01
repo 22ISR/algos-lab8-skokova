@@ -43,14 +43,16 @@ sam_monthly_spending = [1969.62, 3939.37, 2241.59, 3968.27, 3068.80, 1755.02, 38
 john_monthly_spending = [2689.56, 2770.38, 2394.04, 2099.91, 3182.20, 3267.12, 1746.83, 2545.72, 3328.20, 3147.30, 2462.61, 3890.45]  
 sam_monthly_spending = [1969.62, 3939.37, 2241.59, 3968.27, 3068.80, 1755.02, 3885.66, 2491.67, 3828.49, 3171.32, 2771.32, 3380.37]
 
-def expenses():
-    for i in range(12):
-        john_monthly_spending[i] > sam_monthly_spending[i]:
-        
+def compare_spending(john_spending, sam_spending):
+    months = 0
+    for john, sam in zip(john_spending, sam_spending):
+        if john > sam:
+            months += 1
+    return months
 
+months= compare_spending(john_monthly_spending, sam_monthly_spending)
+print(f"Джон тратил больше в {months} месяце")
 
-
-print(john_monthly_spending == sam_monthly_spending)
 
 
 """
