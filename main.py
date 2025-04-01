@@ -143,15 +143,16 @@ scores = [('Mike', 10), ('Mike', 8), ('Mike', 6), ('John', 7), ('John', 8), ('Jo
 
 games = {}
 
-for item in poll_results:
-    if item in votes_counted:
-        votes_counted[item] += 1
+scores = [('Mike', 10), ('Mike', 8), ('Mike', 6), ('John', 7), ('John', 8), ('John', 5), ('Tom', 8), ('Tom', 9), ('Tom', 8)]
+
+games = {}
+
+for player, points in scores:
+    if player in games:
+        games[player] += points
     else:
-        votes_counted[item] = 1
-
-print(votes_counted)
-
-
+        games[player] = points
+print(games)
 
 
 ### Задача 8: Статистика списка  
@@ -161,6 +162,16 @@ numbers = [10, 3, 5, 9, 18, 3, 0, 7]
 ```  
 Напишите функцию, которая возвращает максимальное значение, сумму и среднее арифметическое чисел в списке.  
 
+numbers = [10, 3, 5, 9, 18, 3, 0, 7]
+
+def task8(input):
+    return {
+        "sum": sum(input),
+        "max": max(input),
+        "avg": sum(input) / len(input)
+    }
+
+print(task8(input))
 ---
 
 ### Задача 9: Длинные и короткие слова  
@@ -170,6 +181,16 @@ word_list = ["apple", "airplane", "carrot", "elephant", "guitar", "moonlight"]
 ```  
 Напишите программу, которая определяет самое длинное и самое короткое слово в списке.  
 
+word_list = ["apple", "airplane", "carrot", "elephant", "guitar", "moonlight"]
+
+def wordss(input_string):
+    longest_word = max(word_list, key=len)
+    minimal_word = min(word_list, key=len)
+    return longest_word, minimal_word
+
+longest, minimal = wordss(word_list)
+
+print(longest, minimal)
 ---
 
 ### Задача 10: Фильтрация по частоте  
