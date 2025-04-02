@@ -202,6 +202,16 @@ number_list = [5, 8, 2, 7, 3, 5, 6, 9, 2, 4, 8, 7, 1, 5, 3]
 ```  
 Создайте новый список, содержащий только числа, которые встречаются в оригинальном списке не менее трёх раз.  
 
+number_list = [5, 8, 2, 7, 3, 5, 6, 9, 2, 4, 8, 7, 1, 5, 3]
+
+frequency = {}
+for number in number_list:
+    frequency[number] = frequency.get(number, 0) + 1
+
+filtered_list = [number for number, count in frequency.items() if count >=3]
+
+print (filtered_list)
+
 ---
 
 ### Задача 11: Второй лучший результат  
@@ -211,5 +221,13 @@ exam_results = [23, 78, 96, 32, 53, 67, 23, 98, 33, 38, 45, 39, 86, 12, 43, 45]
 ```  
 Напишите программу, которая определяет второй по величине результат в списке.  
 
+exam_results = [23, 78, 96, 32, 53, 67, 23, 98, 33, 38, 45, 39, 86, 12, 43, 45]
+
+results = sorted(set(exam_results), reverse=True)
+
+if len(results) > 2:
+    print(f"Второй лучший результат: {results[1]}")
+else:
+    print("Нет второго лучшего результата")
 --- 
 """
